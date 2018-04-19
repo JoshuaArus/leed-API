@@ -246,6 +246,14 @@ if(PLUGIN_ENABLED == 1)
                 }
             break;
             
+            case "getUnreadCount":
+                $target = "*";
+                
+                $count = $eventManager->rowCount(array('unread'=>1));
+
+                $jsonOutput = "{\"unreadCount\":".$count."}\n";
+            break;
+
             default:
             
                 // Error#0: no eror
